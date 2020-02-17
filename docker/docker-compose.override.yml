@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  php:
+    image: wodby/wordpress:$WORDPRESS_TAG
+    environment:
+      PHP_FPM_CLEAR_ENV: "no"
+    volumes:
+      - codebase:/var/www/html
+      - //C/Users/tomohara/Desktop/projects/IN/wp-content:/var/www/html/wp-content
+
+
+      #      - //C/projects/bp/wp-content/themes/business-partner:/var/www/html/bp
+      #      - //C/Users/fukumoto:/var/www/html/test
+
+
+
+  nginx:
+    volumes:
+      - codebase:/var/www/html
+      - //C/Users/tomohara/Desktop/projects/IN/wp-content:/var/www/html/wp-content
+
+      #      - //C/projects/bp/wp-content/themes/business-partner:/var/www/html/bp   
+      #      - //C/Users/fukumoto:/var/www/html/test
+
+
+
+
+volumes:
+  codebase:
