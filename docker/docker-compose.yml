@@ -1,5 +1,5 @@
 version: "3"
-
+# docker-composeで使用するバージョン
 services:
   mariadb:
     image: wodby/mariadb:$MARIADB_TAG
