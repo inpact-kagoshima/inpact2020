@@ -117,7 +117,7 @@ function inpact_test_widgets_init() {
 add_action( 'widgets_init', 'inpact_test_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * cssとかscriptとかを読み込む.
  */
 function inpact_test_scripts() {
 	wp_enqueue_style( 'inpact-test-style', get_stylesheet_uri() );

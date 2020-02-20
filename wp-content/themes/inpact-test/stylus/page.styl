@@ -1,0 +1,55 @@
+
+$hero-hackground = #FFF9C4;
+$font-color = #232323;
+
+
+.page .hero {
+   hero(40rem, 5rem);
+}
+
+.post-type-archive .hero {
+   hero(40rem, 5rem);
+}
+
+.single .hero {
+   hero(24rem, 4rem);
+}
+
+.single .container {
+}
+
+.title-container .title {
+   width: 900px;
+   max-width: 100%;
+}
+
+.columns {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.col {
+   flex: 1;
+
+   .columns.three & {
+      flex-basis: 100%;
+      flex-grow: 0;
+
+      @media screen and (min-width: $break-small) {
+         flex-basis: 50%;
+      }
+
+      @media screen and (min-width: $break-medium) {
+         flex-basis: 33.33%;
+      }
+   }
+
+   .columns.two & {
+      flex-basis: 100%;
+      flex-grow: 0;
+
+      @media screen and (min-width: $break-small) {
+         flex-basis: 50%;
+      }
+   }
+}
