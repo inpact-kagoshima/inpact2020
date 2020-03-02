@@ -1,53 +1,34 @@
 <?php
 /**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ *Template Name: archive.php
  * @package inpact_test
  */
 
 get_header();
 ?>
+	<div class="content-area">
+		<main class="site-main">
+			<h1>ここはarchive.php/ここに記事一覧を出したい</h1>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<?php 
+			if ( have_posts() ) : 
+		
+			while ( have_posts() ): the_post();
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
+			the_title();
+					get_template_part('template-parts/content');
 			endwhile;
+		?>
 
-			the_posts_navigation();
-
+		<?php
 		else :
-
-			get_template_part( 'template-parts/content', 'none' );
+			echo '記事はありません';
 
 		endif;
 		?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+			<h1>ここまで</h1>
 <?php
-get_sidebar();
+
 get_footer();

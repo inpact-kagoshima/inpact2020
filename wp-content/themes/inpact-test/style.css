@@ -1,31 +1,5 @@
-/*
-Theme Name: inpact test
-Author: tomohara
-Description: Description
-*/
-@charset 'utf-8';
-body {
-  background-color: #f00;
-}
-.text {
-  font-size: 1.6rem;
-}
-.text.sm {
-  font-size: 1.2rem;
-}
-.text.lg {
-  font-size: 1.8rem;
-}
-.title {
-  font-size: 2.2rem;
-  color: $text;
-}
-.title.sm {
-  font-size: 2rem;
-}
-.title.lg {
-  font-size: 3rem;
-}
-body {
-  background-color: #ff0;
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  background: #808080;
 }

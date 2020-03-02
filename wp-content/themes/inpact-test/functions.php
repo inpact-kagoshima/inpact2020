@@ -159,3 +159,52 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+/**
+ * Create Post Type
+ */
+add_action('init', 'create_post_type');
+function create_post_type()
+{
+  register_post_type(
+    'works',
+    array(
+      'labels' => array(
+        'name' => __('開発実績'),
+        'singular_name' => __('開発実績')
+      ),
+      'public' => true,
+      'has_archive' => "開発実績",
+    )
+  );
+}
+
+function add_page_column_title( $columns ) {
+	$columns[ 'slug' ] = "スラッグ";
+	return $columns;
+  }
+  function add_page_column( $column_name, $post_id ) {
+	if( $column_name == 'slug' ) {
+	  $post = get_post( $post_id );
+	  $slug = $post->post_name;
+	  echo esc_attr( $slug );
+	}
+  }
+  add_filter( 'manage_pages_columns', 'add_page_column_title' );
+  add_action( 'manage_pages_custom_column', 'add_page_column', 10, 2 );
+
+  function my_disable_redirect_canonical( $redirect_url ) {
+  
+	if ( is_archive() ){
+		$subject = $redirect_url;
+		$pattern = '/\/page\//'; // URLに「/page/」があるかチェック
+		preg_match($pattern, $subject, $matches);
+
+		if ($matches){
+		//リクエストURLに「/page/」があれば、リダイレクトしない。
+		$redirect_url = false;
+		return $redirect_url;
+		}
+	}
+
+}

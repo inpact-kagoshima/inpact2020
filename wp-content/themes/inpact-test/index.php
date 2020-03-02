@@ -1,16 +1,26 @@
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package inpact_test
+ */
 
-<!-- header-navまでをget_header()に置き換える -->
-<?php get_header(); ?>
+get_header();
+?>
 
-<!-- pickup -->
-<div id="pickup">
+	<section class="content-area">
+		<main  class="site-main">
+		<h1>test</h1>
 
-<!-- inner -->
-<div class="inner">
-・・
-</div><!-- /inner -->
+		</main><!-- #main -->
+	</section><!-- #primary -->
 
-</div><!-- /content -->
-
-<!-- footer-menuから下をget_footer()に置き換える -->
-<?php get_footer(); ?>
+<?php
+get_footer();
