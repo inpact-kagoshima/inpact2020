@@ -1,64 +1,65 @@
-// Box sizing rules 
+// Box sizing rules
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
 // 1emは16px→10pxになる
-
 html {
-  font-size: 62.5%;　
+  font-size: 62.5%;
+}
 
-// Remove default padding 
+// Remove default padding
 ul, ol {
   padding: 0;
 }
 
-// Remove default margin 
+// Remove default margin
 body, h1, h2, h3, h4, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
   margin: 0;
 }
 
-// Set core body defaults 
+// Set core body defaults
 body {
   min-height: 100vh;
   // アドレスバーを含めて100%
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
   // ページ内リンクがスムーススクロールになる
   text-rendering: optimizeSpeed;
   // テキストのレンダリング
   font-family: 'Kosugi Maru', 'Yu Gothic', 'Meiryo', Meiryo, sans-serif;
-  font-size: 1.6rem; 
+  font-size: 1.6rem;
   // ->62.5%=10pxを基準にする,16px
   line-height: 1.5;
 }
 
-// Remove list styles on ul, ol elements with a class attribute 
+// Remove list styles on ul, ol elements with a class attribute
 ul, ol {
   list-style: none;
 }
 
-// A elements that don't have a class get default styles 
-a:not([class]) { 否定疑似クラス　aタグ以外を指定
-  text-decoration-skip-ink: auto;　テキストリンクの下線を文字に接触させない
+// A elements that don't have a class get default styles
+a:not([class]) { // 否定疑似クラス　aタグ以外を指定
+  text-decoration-skip-ink: auto; // テキストリンクの下線を文字に接触させない
 }
 
-// Make images easier to work with 
+// Make images easier to work with
 img {
   max-width: 100%;
   display: block;
 }
 
-// Natural flow and rhythm in articles by default 
+// Natural flow and rhythm in articles by default
 article > * + * {
   margin-top: 1em;
 }
 
-// Inherit fonts for inputs and buttons 
+// Inherit fonts for inputs and buttons
 input, button, textarea, select {
   font: inherit;
   // 親要素から計算値を継承する
 }
 
-// Remove all animations and transitions for people that prefer not to see them 
+// Remove all animations and transitions for people that prefer not to see them
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

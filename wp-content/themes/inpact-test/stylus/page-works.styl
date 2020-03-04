@@ -1,5 +1,25 @@
 .works {
-    display: flex;
-    flex-wrap: wrap;
-    background: gray;
+    .work-entry-columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
+
+    .work-item {
+        flex-basis: calc(100% / 3 - 6rem);
+        min-width: 30rem;
+        margin: 0 2rem 10rem; //top l-r bottom
+        justify-content: space-between;
+    }
+
+    .work-img {
+        img {
+            height: 100%;
+        }
+    }
+
+    .pagination {
+        flex-basis: 100%;
+        text-align: center;
+    }
+}
